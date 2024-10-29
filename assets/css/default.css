@@ -1,0 +1,293 @@
+.bbr-form{
+	border: 1px solid #ddd;
+	padding: 12px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+.bbr-form-control{
+	padding: 12px;
+	display: block !important;
+	width: 100% !important;
+	border-radius: 0 !important;
+	border: 1px solid #ddd !important;
+	background: #fff !important;
+}
+input[type="color"].bbr-form-control{
+	padding: 0 !important;
+}
+.bbr-help-block{
+	font-size:75% !important;
+	margin-top: 0 !important;
+}
+
+/* Dropdown (admin)
+Assign class bbrdropbtn to button element inside div with class bbrdropdown. Items inside must either be an a element, or a div with class bbrdropdownsubmenu. bbrdropdownsubmenu must then contain a div with class bbrdropdown-subcontent.
+*/
+.bbrdropbtn {
+  background-color: #000000;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+
+.bbrdropdown, .bbrdropdownsubmenu {
+  position: relative;
+  display: inline-block;
+}
+
+.bbrdropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fefefe;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+}
+div.bbrdropdown-subcontent {
+  display: none;
+  position: absolute;
+  background-color: #fefefe;
+  min-width: 400px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.bbrdropdown-content a, .bbrdropdownsubmenu {
+  color: black;
+  padding: 9px 12px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  line-height: 1em;
+}
+
+.bbrdropdown-subcontent {
+  right: 0;
+  top: 100%;
+}
+
+.bbrdropdown-content a:hover {
+    background-color: #ddd;
+}
+.bbrdropdownsubmenu:hover {
+    background-color: #eee;
+}
+
+.bbrdropdown:hover .bbrdropdown-content, .bbrdropdownsubmenu:hover .bbrdropdown-subcontent {
+    display: block;
+}
+
+.bbrdropdown:hover .bbrdropbtn {
+    background-color: #444444;
+}
+
+
+/* Select Field (admin)
+enclose field in div with class bbr-select with a style attribute setting the width
+ */
+
+/* The container must be positioned relative: */
+.bbr-select {
+  position: relative;
+}
+
+.bbr-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.bbr-select-selected {
+  background-color: black;
+}
+
+/* Style the arrow inside the select element: */
+.bbr-select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.bbr-select-selected.bbr-select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.bbr-select-items div,.bbr-select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.bbr-select-items {
+  position: absolute;
+  background-color: black;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.bbr-select-hide {
+  display: none;
+}
+
+.bbr-select-items div:hover, .bbr-same-as-selected {
+  background-color: rgba(255,255,255, 0.1);
+}
+
+
+/* Checkbox field (admin)
+enclose in label with class bbr-check-container, put span with class bbr-check-checkmark after checkbox inside label
+*/
+
+/* Customize the label (the container) */
+.bbr-check-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.bbr-check-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.bbr-check-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+/* On mouse-over, add a background color */
+.bbr-check-container:hover input ~ .bbr-check-checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a background */
+.bbr-check-container input:checked ~ .bbr-check-checkmark {
+  border: 1px solid black;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.bbr-check-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.bbr-check-container input:checked ~ .bbr-check-checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.bbr-check-container .bbr-check-checkmark:after {
+  left: 3.5px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+/* Radio field (admin)
+enclose in label with class bbr-radio-container, put span with class bbr-radio-checkmark after checkbox inside label
+*/
+
+/* The container */
+.bbr-radio-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.bbr-radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.bbr-radio-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.bbr-radio-container:hover input ~ .bbr-radio-checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.bbr-radio-container input:checked ~ .bbr-radio-checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.bbr-radio-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.bbr-radio-container input:checked ~ .bbr-radio-checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.bbr-radio-container .bbr-radio-checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
